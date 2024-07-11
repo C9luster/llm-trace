@@ -1,0 +1,14 @@
+Metadata-Version: 2.1
+Name: llm-eval
+Version: 0.1.0
+Summary: LLM跟踪评估脚本
+Author: yinjiaqi
+Author-email: 1006272072@qq.com
+Requires-Python: >=3.9
+Requires-Dist: opentelemetry-exporter-otlp==1.25.0
+Requires-Dist: opentelemetry-instrumentation==0.46b0
+Requires-Dist: opentelemetry-sdk==1.25.0
+Requires-Dist: opentelemetry-api==1.25.0
+Requires-Dist: openinference-instrumentation==0.1.7
+Provides-Extra: serve
+Requires-Dist: arize-phoenix==4.5.0; extra == "serve"
