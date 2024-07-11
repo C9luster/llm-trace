@@ -27,6 +27,18 @@ def langchain_tracer(
     trace_console: bool = False,
     local_span: Optional[LocalSpanExporter] = None
 ):
+    """
+    初始化OpenTelemetry追踪器，用于在langchain服务中收集跟踪数据。
+    
+    Args:
+        trace_phoenix (bool, optional): 是否将trace数据在本地Phoenix UI中展示。默认为True。
+        trace_console (bool, optional): 是否将trace数据在控制台展示。默认为False。
+        local_span (Optional[LocalSpanExporter], optional): 自定义的span处理器，用于处理span数据。默认为None。
+    
+    Returns:
+        None
+    
+    """
     resource = Resource(attributes={
     "service.name": "langchain"
     })  
