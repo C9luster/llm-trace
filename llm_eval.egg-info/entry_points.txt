@@ -1,2 +1,0 @@
-[console_scripts]
-phoenix_trace_server = llm_eval.trace.tracer.phoenix_trace:runtime_main
