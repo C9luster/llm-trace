@@ -15,14 +15,14 @@ phoenix_trace_server
 #### 设置环境变量与启动langchain跟踪器
 
 ```python
-from llm_eval.trace import langchain_tracer, LocalSpanExporter
+from llm_eval import langchain_tracer, LocalSpanExporter
 
 # 创建跟踪信息储存容器
 local_span = LocalSpanExporter()
 
 # 启动跟踪器
 langchain_tracer(
-    race_phoenix = True,
+    trace_phoenix = True,
     trace_console = True,
     local_span=local_span
     )
