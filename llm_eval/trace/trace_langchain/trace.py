@@ -1,6 +1,6 @@
 from typing import Optional
 
-from llm_eval.trace import LocalSpanExporter
+from ..base import LocalSpanExporter
 
 from openinference.instrumentation.langchain import LangChainInstrumentor
 from opentelemetry import trace

@@ -44,15 +44,14 @@ langchain_tracer()函数有四个参数
 
 #### 导出本地容器储存的跟踪信息
 
-- local_span.spans 的类型为list，储存的数据类型为ReadableSpan，查看span信息可以使用span.to_json()
+- local_span.spans 的类型为list，储存的数据类型为ReadableSpan，答应出json格式的span信息
 
 ```python
-# 取出跟踪道德span信息列表
-spans = local_span.spans
+# 取出跟踪道德span信息列表,输出的结果为一个迭代器
+spans = local_span.span_json()
 
-# print展示
+# 使用迭代器流式输出json格式的span信息
 for span in spans:
     print(span)
-    print(span.to_json())
 ```
 
