@@ -37,7 +37,7 @@ langchain_tracer()函数有四个参数
 ### 运行你的langchain文件
  
 ```python
-# 配置并运行你的langchain文件
+# 配置并运行你的langchain框架
 ```
 
 ### 导出本地容器储存的跟踪信息
