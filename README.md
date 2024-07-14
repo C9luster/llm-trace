@@ -1,57 +1,13 @@
 # LLM-EVAL文档
 
+## LLM-Eval 简介
+
+随着自然语言处理（NLP）技术的迅猛发展，大型语言模型（LLM）在各个应用领域中的使用变得越来越普遍。然而，由于其复杂性和多样化的应用场景，对这些模型进行有效的跟踪和评估变得至关重要。LLM跟踪和评估框架应运而生，旨在为开发者和研究人员提供一套系统化的方法和工具，以确保LLM在实际应用中的性能、可靠性和安全性。
+
 ## LLM-Trace 部分
 
-### Trace LangChain
+[LLM-Trace功能介绍](./docs/trace_docs.md)
 
-#### 启动phoenix可视化界面
+## LLM-Eval 部分
 
-```bash
-phoenix_trace_server
-```
-
-- 默认phoenix常驻，使用ctrl+c退出结束程序
-
-#### 设置环境变量与启动langchain跟踪器
-
-```python
-from llm_eval.trace import langchain_tracer, LocalSpanExporter
-
-# 创建跟踪信息储存容器
-local_span = LocalSpanExporter()
-
-# 启动跟踪器
-langchain_tracer(
-    trace_phoenix = True,
-    trace_console = True,
-    local_span=local_span
-    )
-```
-langchain_tracer()函数有四个参数
-- race_phoenix: Optional[bool] = True
-  - 是否向phoenix可视化界面传参，默认为True
-- trace_console: Optional[bool] = True
-  - 控制台输出跟踪信息，默认为False
-- local_span: Optional[LocalSpanExporter] = None
-  - 跟踪信息储存容器，非必填项，默认为空，则不进行变量储存
-
-
-#### 运行你的langchain文件
- 
-```python
-# 配置并运行你的langchain文件
-```
-
-#### 导出本地容器储存的跟踪信息
-
-- local_span.spans 的类型为list，储存的数据类型为ReadableSpan，答应出json格式的span信息
-
-```python
-# 取出跟踪道德span信息列表,输出的结果为一个迭代器
-spans = local_span.span_json()
-
-# 使用迭代器流式输出json格式的span信息
-for span in spans:
-    print(span)
-```
-
+敬请期待

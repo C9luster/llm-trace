@@ -97,9 +97,9 @@ class LocalSpanExporter(SpanExporter):
                                                 if isinstance(message_value, dict):
                                                     output = '{}{}'.format(output, message_value['text'])+'\n'
                                                     if message_value.get('generation_info', None) and message_value['generation_info'].get('token_usage', None):
-                                                        input_tokens += message_value['generation_info']['token_usage'].get('input', 0)
-                                                        output_tokens += message_value['generation_info']['token_usage'].get('output', 0)
-                                                        total_tokens += message_value['generation_info']['token_usage'].get('total', 0)
+                                                        input_tokens += message_value['generation_info']['token_usage'].get('input_tokens', 0)
+                                                        output_tokens += message_value['generation_info']['token_usage'].get('output_tokens', 0)
+                                                        total_tokens += message_value['generation_info']['token_usage'].get('total_tokens', 0)
                         if output.endswith('\n'):
                             output = output[:-1]
                         llm_dict['output'] = output  
@@ -107,4 +107,9 @@ class LocalSpanExporter(SpanExporter):
                         llm_dict['output_tokens'] = output_tokens
                         llm_dict['total_tokens'] = total_tokens
                     self.llms.append(llm_dict)
+        
+    def llms_message(self):
+        self._llm_spans()
+        for llm_message in self.llms:
+            yield llm_message
                 
