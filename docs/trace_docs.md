@@ -64,3 +64,13 @@ llm_message = local_span.llms_message()
 for message in llm_message:
     print(message)
 ```
+
+#### 查看整个运行流程Agent的运行信息
+
+- agent_message()函数返回的为一个，可流式查看Agent运行信息，且返回值为dict字典类型
+
+```python
+agent_message = local_span.agent_message()
+for message in agent_message:
+    print(message)
+```
